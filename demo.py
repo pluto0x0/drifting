@@ -142,7 +142,7 @@ def main():
             img_np = img_np.transpose(1, 2, 0)            # HWC
         img_u8 = (np.clip(img_np[..., :3], 0, 1) * 255).astype(np.uint8)
 
-        fname = output_dir / f"class_{class_id:03d}_{tag}.png"
+        fname = output_dir / f"class_{class_id:03d}_{tag}.png" 
         Image.fromarray(img_u8).save(fname)
         print(f"  -> {fname}")
         saved.append((class_id, tag, img_u8))
